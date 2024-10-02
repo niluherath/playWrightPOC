@@ -31,7 +31,7 @@ const updateRequest = await request.put('/booking/1', {
         'Accept': 'application/json',
         'Cookie': `token=${token}`,
         },
-    data: {
+    data: { 
         "firstname": "Jim",
         "lastname": "Brown",
         "totalprice": 111,
@@ -41,7 +41,7 @@ const updateRequest = await request.put('/booking/1', {
         "checkout": "2023-06-15"
         },
     "additionalneeds": "Extra bedding"
-}
+    }
 });
 //console.log(await updateRequest.json());
 expect(updateRequest.ok()).toBeTruthy();

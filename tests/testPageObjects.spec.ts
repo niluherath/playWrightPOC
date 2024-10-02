@@ -36,7 +36,7 @@ test.beforeEach(async({page})=>{
   });
 
   
-  test('testing', async ({ page }) => {
+  test('submitting the grid form', async ({ page }) => {
     const pm = new PageManager(page)
     await pm.navigateToNavigationPage();
     const navigateTo = pm.navigateToNavigationPage()
