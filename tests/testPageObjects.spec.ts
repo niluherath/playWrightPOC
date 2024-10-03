@@ -12,7 +12,7 @@ import { test } from '../test-options'
 
   
 test.beforeEach(async({page})=>{
-    await page.goto('/');
+    await page.goto('http://localhost:4200/pages/iot-dashboard/');
     await expect(page).toHaveTitle('playwright-test-admin Demo Application')
   })
 

@@ -40,11 +40,7 @@ export default defineConfig({
   
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'dev',
-      use: { ...devices['Desktop Chrome'],baseURL: 'http://localhost:4200/pages/iot-dashboard/' },
-      
-    },
+
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },

@@ -1,5 +1,7 @@
 import { test, expect , request} from '@playwright/test';
 
+var randomNumber = Math.random()*100
+
 
 var token
 
@@ -34,7 +36,7 @@ const updateRequest = await request.put('/booking/1', {
     data: { 
         "firstname": "Jim",
         "lastname": "Brown",
-        "totalprice": 111,
+        "totalprice": randomNumber,
         "depositpaid": true,
         "bookingdates": {
         "checkin": "2023-06-01",
@@ -49,6 +51,7 @@ expect(updateRequest.status()).toBe(200);
 const updatedResponseBody = await updateRequest.json()
 expect(updatedResponseBody).toHaveProperty("firstname", "Jim");
 expect(updatedResponseBody).toHaveProperty("lastname", "Brown");
-expect(updatedResponseBody).toHaveProperty("totalprice", 111);
+randomNumber = Math.round(randomNumber)
+expect(updatedResponseBody).toHaveProperty("totalprice", randomNumber);
 expect(updatedResponseBody).toHaveProperty("depositpaid", true);
 });
