@@ -1,10 +1,10 @@
-import { test, expect , request} from '@playwright/test';
+import { test, expect} from '@playwright/test';
 import { faker } from '@faker-js/faker';
 const { DateTime } = require("luxon");
 
 
-const randomFirstName = faker.name.firstName()
-const randomLastName = faker.name.lastName()
+const randomFirstName = faker.person.firstName()
+const randomLastName = faker.person.lastName()
 //a number from 0 to 100
 const randomNumber = Math.random()*100
 const currentDate = DateTime.now().toFormat('yyyy-MM-dd')

@@ -1,9 +1,9 @@
-import { test, expect , request} from '@playwright/test';
+import { test, expect} from '@playwright/test';
 
-var randomNumber = Math.random()*100
+let randomNumber = Math.random()*100
 
 
-var token
+let token
 
 
 test('should be able to update the booking details', async ({ request }) => {

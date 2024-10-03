@@ -1,5 +1,4 @@
 import {  expect } from '@playwright/test';
-import {NavigationPage} from '../page-objects/navigationPage';
 import { FormLayoutPage } from '../page-objects/formLayoutPage';
 import { PageManager } from '../page-objects/pageManager';
 import { test } from '../test-options'
@@ -19,7 +18,7 @@ test.beforeEach(async({page})=>{
 
   test('navigate to layouts', async ({ page }) => {
     const pm = new PageManager(page)
-    await pm.navigateToNavigationPage();
+    pm.navigateToNavigationPage();
     const navigateTo = pm.navigateToNavigationPage()
     await navigateTo.navigateToFormLayoutPage()
     await expect(page).toHaveURL('http://localhost:4200/pages/forms/layouts')
@@ -28,7 +27,7 @@ test.beforeEach(async({page})=>{
 
   test('navigate to datepicker', async ({ page }) => {
     const pm = new PageManager(page)
-    await pm.navigateToNavigationPage();
+    pm.navigateToNavigationPage();
     const navigateTo = pm.navigateToNavigationPage()
     navigateTo.navigateToDatePickerPage()
     await expect(page).toHaveURL('http://localhost:4200/pages/forms/datepicker')
@@ -38,7 +37,7 @@ test.beforeEach(async({page})=>{
   
   test('submitting the grid form', async ({ page }) => {
     const pm = new PageManager(page)
-    await pm.navigateToNavigationPage();
+    pm.navigateToNavigationPage();
     const navigateTo = pm.navigateToNavigationPage()
     await navigateTo.navigateToFormLayoutPage()
     await expect(page).toHaveURL('http://localhost:4200/pages/forms/layouts')
