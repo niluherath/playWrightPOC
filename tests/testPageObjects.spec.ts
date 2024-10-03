@@ -6,7 +6,7 @@ import { test } from '../test-options'
 
 
 
-  test.describe.only('tagged tests', {
+  test.describe('tagged tests', {
     tag: '@smoke',
   }, () => {
 
