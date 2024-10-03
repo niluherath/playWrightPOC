@@ -1,4 +1,4 @@
-import { test, expect , request} from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 
 test('should be able to get subset of booking details using query parameters', async ({ request }) => {

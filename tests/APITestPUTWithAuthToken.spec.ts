@@ -45,7 +45,7 @@ const updateRequest = await request.put('/booking/1', {
     "additionalneeds": "Extra bedding"
     }
 });
-//console.log(await updateRequest.json());
+console.log(await updateRequest.json());
 expect(updateRequest.ok()).toBeTruthy();
 expect(updateRequest.status()).toBe(200);
 const updatedResponseBody = await updateRequest.json()
