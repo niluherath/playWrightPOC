@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import {NavigationPage} from '../page-objects/navigationPage';
 
 
-test.describe.only('tagged tests', {
+test.describe('tagged tests', {
     tag: '@smoke',
   }, () => {
 
