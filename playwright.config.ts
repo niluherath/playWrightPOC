@@ -1,18 +1,26 @@
 import { defineConfig, devices } from '@playwright/test';
 
+import type { TestOptions } from './test-options';
+
+import dotenv from 'dotenv'
+dotenv.config();
+
+
 
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
+
+ //dotenv.config({ path: path.resolve(__dirname, '.env') });
+
 
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
-export default defineConfig({
+export default defineConfig<TestOptions>({
+
+  outputDir: 'test-results',
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -32,6 +40,8 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     baseURL: 'https://restful-booker.herokuapp.com',
+    globalsQaURL: 'http://localhost:4200/pages/iot-dashboard/',
+
     actionTimeout: 10 * 1000,
     navigationTimeout: 30 * 1000,
     video: 'on',
@@ -57,10 +67,10 @@ export default defineConfig({
     },
 
     /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
+     {
+       name: 'Mobile Chrome',
+       use: { ...devices['Pixel 5'] },
+     },
     // {
     //   name: 'Mobile Safari',
     //   use: { ...devices['iPhone 12'] },

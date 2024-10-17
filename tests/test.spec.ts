@@ -1,17 +1,30 @@
-import { test, expect} from '@playwright/test';
+import { test, expect, request} from '@playwright/test';
+import { APIUtils } from '../utils/APIUtils.ts';
+
+const loginPalyload = {
+    "username": "admin",
+    "password": "password123"
+    }
 
 let randomNumber = Math.random()*100
+let token: any
 
 
-let token
+test.beforeEach(async()=>{
+    const apiContext = await request.newContext();
+    const apiUtils = new APIUtils(apiContext, loginPalyload)
+    token = apiUtils.getToken
+    console.log("token:"+ token)
+    
 
+})
 
 test('should be able to update the booking details', async ({ request }) => {
 
 
 // Create a Token which will be used in PUT request
 
-
+/** 
 const response = await request.post('/auth', {
 data: {
 "username": "admin",
@@ -24,6 +37,8 @@ expect(response.status()).toBe(200);
 const responseBody = await response.json();
 token = responseBody.token;
 console.log("New Token is: " + token);
+
+**/
 
 
 // PUT

@@ -1,5 +1,7 @@
-import { test, expect } from '@playwright/test';
+import { expect } from '@playwright/test';
 import {NavigationPage} from '../page-objects/navigationPage';
+
+import { test } from '../test-options';
 
 
 test.describe('tagged tests', {
@@ -7,8 +9,8 @@ test.describe('tagged tests', {
   }, () => {
 
   
-test.beforeEach(async({page})=>{
-    await page.goto('http://localhost:4200/pages/iot-dashboard/');
+test.beforeEach(async({page,  globalsQaURL})=>{
+    await page.goto( globalsQaURL);
     await expect(page).toHaveTitle('playwright-test-admin Demo Application')
   })
 

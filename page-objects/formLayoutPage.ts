@@ -21,8 +21,10 @@ export class FormLayoutPage{
         await usingTheGridForm.getByRole('textbox', {name: 'Email'}).fill(email)
         await usingTheGridForm.getByRole('textbox', {name: 'Password'}).fill(password)
         await usingTheGridForm.getByRole('radio', {name: optionText}).check({force: true})
-        await usingTheGridForm.getByRole('button').click
+      //  await usingTheGridForm.getByRole('button').click
 
     }
 
-}
+    }
+
+

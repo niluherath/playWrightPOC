@@ -13,5 +13,7 @@ export class HelperBase{
         await this.page.waitForTimeout(timeInSeconds * 1000)
     }
 
+    
+
 
 }
