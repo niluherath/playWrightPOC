@@ -8,7 +8,7 @@ test.describe('tagged tests', {
     tag: '@smoke',
   }, () => {
 
-  
+ //gets the global QA url from test options 
 test.beforeEach(async({page,  globalsQaURL})=>{
     await page.goto( globalsQaURL);
     await expect(page).toHaveTitle('playwright-test-admin Demo Application')
