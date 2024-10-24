@@ -10,11 +10,11 @@ export const test = base.extend<TestOptions>({
 
     globalsQaURL: ['', {option: true}],
 
-    homePage : async({page}, use)=>{
+    homePage : [async({page}, use)=>{
 
         await page.goto('http://localhost:4200/pages/iot-dashboard/');
         await use('')
-    }
+    }, {auto:true}]
 })
 
 

@@ -9,9 +9,7 @@ import { test } from '../test-options'
     tag: '@smoke',
   }, () => {
 
-
-
-
+ 
   test('navigate to layouts', async ({ page, homePage }) => {
     const pm = new PageManager(page)
     pm.navigateToNavigationPage();
