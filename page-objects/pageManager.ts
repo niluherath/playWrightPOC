@@ -20,13 +20,18 @@ export class PageManager{
     }
 
 
-    navigateToNavigationPage(){
+    getNavigationPage(): NavigationPage{
         return this.navigationPage
     }
 
 
-    navigateToDatePickerPage(){
+    getDatePickerPage(): DatepickerPage{
         return this.datePickerPage
+    }
+
+    getFormLayoutPage(): FormLayoutPage{
+        return this.formLayoutPage 
+
     }
 
 }

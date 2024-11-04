@@ -1,8 +1,12 @@
-import {test as base} from '@playwright/test'
+import { test as base } from '@playwright/test';
+import {NavigationPage} from './page-objects/navigationPage';
+import {DatePickerPage} from './page-objects/datePickerPage';
 
-export type TestOptions = {
+
+type TestOptions = {
     globalsQaURL: string
-    homePage: string
+    navigationPage: NavigationPage
+    datePickerPage: DatePickerPage
 
 }
 
@@ -10,12 +14,25 @@ export const test = base.extend<TestOptions>({
 
     globalsQaURL: ['', {option: true}],
 
-    homePage : [async({page}, use)=>{
+    navigationPage : async({page}, use)=>{
+        await page.goto("http://localhost:4200/pages/iot-dashboard/")
+        const navigationPage = new NavigationPage(page);
+        await use(navigationPage);
+    },
 
-        await page.goto('http://localhost:4200/pages/iot-dashboard/');
-        await use('')
-    }, {auto:true}]
+    datePickerPage : async({page}, use)=>{
+        const datePickerPage = new DatePickerPage(page);
+        await use(datePickerPage);
+    }
+   
+
 })
+
+export { expect } from '@playwright/test';
+
+
+
+
 
 
 

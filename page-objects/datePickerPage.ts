@@ -1,7 +1,7 @@
 import {Page} from "@playwright/test";
 
     
-export class DatepickerPage{
+export class DatePickerPage{
 
     private readonly page: Page
     

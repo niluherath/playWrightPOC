@@ -20,8 +20,8 @@ export class NavigationPage extends HelperBase{
     }
 
     async navigateToDatePickerPage(){
-        this.selectGroupMenuItem('Forms')
-        this.datePickerMenuItem.click();
+        await this.selectGroupMenuItem('Forms')
+        await this.datePickerMenuItem.click();
 
     }
 

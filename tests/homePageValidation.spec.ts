@@ -1,6 +1,10 @@
 import { test, expect } from '@playwright/test';
 
 import dotenv from 'dotenv'; 
+import { PageManager } from '../page-objects/pageManager';
+import { FormLayoutPage } from '../page-objects/formLayoutPage';
+import {NavigationPage} from '../page-objects/navigationPage';
+import {DatepickerPage} from '../page-objects/datePickerPage';
 
 
 test('validate Home page content', async ({ page }) => {
@@ -15,6 +19,7 @@ test('validate Home page content', async ({ page }) => {
   await expect(page).toHaveTitle('playwright-test-admin Demo Application')
   const light = page.getByText('Roller Shades')
   expect(light).toBeVisible;
+
 });
 
 
