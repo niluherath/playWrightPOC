@@ -1,6 +1,6 @@
-import { test, expect } from '../test-options'
+//import { test, expect } from '../test-options'
 import {NavigationPage} from '../page-objects/navigationPage';
-//import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 
 
 
@@ -22,6 +22,16 @@ import {NavigationPage} from '../page-objects/navigationPage';
     const navigationPage = new NavigationPage(page)
     await navigationPage.navigateToDatePickerPage
     await expect(page).toHaveURL('http://localhost:4200/pages/forms/datepicker')
+
+  });
+
+
+  test('navigate tables', async ({ page }) => {
+
+    await page.goto("http://localhost:4200/pages/iot-dashboard/")
+    const navigationPage = new NavigationPage(page)
+   // await navigationPage.navigateToTables
+
 
   });
   
