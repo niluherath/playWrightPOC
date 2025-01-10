@@ -22,17 +22,8 @@ test('validate Home page content', async ({ page }) => {
   expect(light).toBeVisible;
   const lightString = light.textContent()
 
-  console.log(`user_name:', ${lightString})
-  console.log(`user_name:', ${lightString}`)
-
-
-
-``
-
-
+  console.log('light string:', lightString); 
 });
-
-
 
 
 test('validate Home page drop down', async ({ page }) => {
@@ -52,15 +43,6 @@ test('validate Home page drop down', async ({ page }) => {
   const optionList = page.locator('nb-option-list nb-option')
   await expect(optionList).toHaveText(["Light", "Dark", "Cosmic", "Corporate"])
   await optionList.filter({hasText:"Cosmic"}).click()
-
-
-
-
-
-  
-
-
-
 });
 
 
