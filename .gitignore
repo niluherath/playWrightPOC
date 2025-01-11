@@ -4,3 +4,12 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 allure-results
+/datePickerValidation.spec/
+/DBsetUp.setup/
+/DBVerification.spec/
+/fixtures.spec/
+/homePageValidation.spec/
+/test.spec/
+/uiComponents.checkBox.spec/
+/uiComponents.inputField.spec/
+/uiComponents.listsAndDropdown.spec/
