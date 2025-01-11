@@ -8,7 +8,7 @@ const loginPayLoad = {username:"admin",password:"password123"};
   
 
 
-test.only('should be able to partial update the booking details', async ({ request }) => {
+test('should be able to partial update the booking details', async ({ request }) => {
 
    const apiUtil = new APIUtils(request, loginPayLoad)
    const token = await apiUtil.getToken(request, loginPayLoad)
