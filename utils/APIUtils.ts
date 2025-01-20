@@ -32,23 +32,4 @@ export class APIUtils{
         
     }
 
-   // async getToken2()
-   // {
-   //     const loginResponse = await this.apiContext.post("/auth",
-   //     {
-  //          data:this.loginPayload
-  ////      })
-        
-   //     console.log(await loginResponse.json());
-   //     expect(loginResponse.ok()).toBeTruthy();
-   //     expect(loginResponse.status()).toBe(200);
-   //     const loginResponseJSON = await loginResponse.json();      
-
-   //     const token = loginResponseJSON.getToken
-        
-  //     return token
-   // }
-
-
-
 }
