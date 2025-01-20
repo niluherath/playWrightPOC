@@ -6,6 +6,7 @@ export class DBUtils{
 
 
   private pool: Pool;
+  private client: any 
 
   private DBConfig = {
     user: "postgres",
@@ -22,9 +23,9 @@ export class DBUtils{
   async getDBConnection(): Promise<PoolClient> {
     if (!this.pool) {
       this.pool = new Pool(this.DBConfig);
-      const client = await this.pool.connect();
+      this.client = await this.pool.connect();
       console.log(`---------> √ DB connection has been established! <---------`);
-      return client;
+      return this.client;
     } else {
       return this.pool.connect();
     }
@@ -38,6 +39,10 @@ export class DBUtils{
     } catch (error) {
       console.error("Error executing query:", error);
     }
+  }
+
+  async endConnection() {
+    this.client.end()
   }
    
  

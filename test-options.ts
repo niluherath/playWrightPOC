@@ -28,8 +28,6 @@ export const test = base.extend<TestOptions>({
 
 })
 
-export { expect, TestOptions } from '@playwright/test';
-
 
 
 
