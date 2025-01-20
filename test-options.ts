@@ -3,7 +3,7 @@ import {NavigationPage} from './page-objects/navigationPage';
 import {DatePickerPage} from './page-objects/datePickerPage';
 
 
-type TestOptions = {
+export type TestOptions = {
     globalsQaURL: string
     navigationPage: NavigationPage
     datePickerPage: DatePickerPage
