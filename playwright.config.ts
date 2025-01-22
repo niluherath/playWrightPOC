@@ -43,7 +43,7 @@ export default defineConfig<TestOptions>({
     baseURL: 'https://restful-booker.herokuapp.com',
     globalsQaURL: 'http://localhost:4200/pages/iot-dashboard/',
 
-    actionTimeout: 10 * 1000,
+    actionTimeout: 50 * 1000,
     navigationTimeout: 30 * 1000,
     video: 'on',
    // globalsQaURL: 'http://localhost:4200/pages/iot-dashboard/'

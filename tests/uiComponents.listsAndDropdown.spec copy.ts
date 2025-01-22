@@ -8,7 +8,7 @@ import {NavigationPage} from '../page-objects/navigationPage';
 
 
 
-test('validate Home page content', async ({ page }) => {
+test('validate Home page drop down', async ({ page }) => {
   dotenv.config(); 
   const global_url = process.env.GLOBAL_URL as string;  
   console.log('GLOBAL_URL:', global_url); 
@@ -18,14 +18,14 @@ test('validate Home page content', async ({ page }) => {
   await page.goto(global_url);
 
   await expect(page).toHaveTitle('playwright-test-admin Demo Application')
-  const light = page.getByText('Roller Shades')
-  expect(light).toBeVisible;
-  const lightString = light.textContent()
 
-  console.log('light string:', lightString); 
+  const ddm = page.locator('ngx-header nb-select')
+  await ddm.click()
+
+  const optionList = page.locator('nb-option-list nb-option')
+  await expect(optionList).toHaveText(["Light", "Dark", "Cosmic", "Corporate"])
+  await optionList.filter({hasText:"Cosmic"}).click()
 });
-
-
 
 
 

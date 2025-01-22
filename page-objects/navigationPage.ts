@@ -9,6 +9,7 @@ export class NavigationPage extends HelperBase{
     readonly datePickerMenuItem: Locator
     readonly smartTable: Locator
     readonly toastr: Locator
+    readonly toolTipMenuItem: Locator
 
     constructor(page: Page){
             super (page)
@@ -16,6 +17,7 @@ export class NavigationPage extends HelperBase{
             this.datePickerMenuItem = page.getByText('Datepicker')
             this.smartTable = page.getByText('Smart Table')
             this.toastr = page.getByText('Toastr')
+            this.toolTipMenuItem = page.getByText('Tooltip')
     }
 
     async navigateToFormLayoutPage(){
@@ -59,5 +61,18 @@ export class NavigationPage extends HelperBase{
         this.smartTable.click()
 
     }
+
+    
+
+
+
+    async navigateToToolTipPage(){
+        await this.selectGroupMenuItem('Modal & Overlays')    
+        await this.toolTipMenuItem.click();
+
+
+}
+
+    
 
 }
