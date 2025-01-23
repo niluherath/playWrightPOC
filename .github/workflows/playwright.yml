@@ -11,6 +11,9 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        shard: [1/4, 2/4, 3/4, 4/4]
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -21,7 +24,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test --grep "@smoke"
+      run: npx playwright test --grep "@smoke", npx playwright test --shard=1/4, npx playwright test --shard=2/4, npx playwright test --shard=3/4, npx playwright test --shard=4/4
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
