@@ -1,6 +1,5 @@
 node_modules/
 /test-results/
-/blob-report/
 /playwright/.cache/
 allure-results
 tests/datePickerValidation.spec
