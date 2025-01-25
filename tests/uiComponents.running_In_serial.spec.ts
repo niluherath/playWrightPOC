@@ -7,9 +7,9 @@ test.describe('tagged tests', {
     tag: '@smoke',
   }, () => {
   
-    test.describe.configure({
-      mode: "serial"
-    })
+   // //test.describe.configure({
+  //    mode: "serial"
+ //   })
     test('navigate to datepicker', async ({ page, navigationPage }) => {
       await navigationPage.navigateToDatePickerPage()
       await expect(page).toHaveURL('http://localhost:4200/pages/forms/datepicker')
