@@ -10,4 +10,4 @@ tests/homePageValidation.spec
 tests/test.spec
 tests/uiComponents.checkBox.spec
 tests/uiComponents.inputField.spec
-tests/uiComponents.listsAndDropdown.spec
+tests/uiComponents.listsAndDropdown.specplaywright 
